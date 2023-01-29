@@ -1,3 +1,13 @@
+$(".splide__arrow").replaceWith(function () {
+    let attrs = { };
+
+    $.each($(this)[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+    });
+  
+    return $("<button />", attrs).append($(this).contents());
+});
+
 $(".splide").each((index) => {
   const splideElement = $(".splide")[index];
 
@@ -8,8 +18,7 @@ $(".splide").each((index) => {
     focus: 0, // 0 = left and 'center' = center
     slideFocus: true,
     type: "slide", // 'loop' or 'slide'
-    gap: "1rem", // space between slides
-    arrows: false, // 'slider' or false
+    gap: "0.5rem", // space between slides
     speed: 600, // transition speed in miliseconds
     dragAngleThreshold: 30, // default is 30
     autoWidth: false, // for cards with differing widths
@@ -35,12 +44,6 @@ $(".splide").each((index) => {
         gap: "1rem",
       },
     },
-  });
-  const bar = splide.root.querySelector(".my-carousel-progress-bar");
-
-  splide.on("mounted move", function () {
-    var end = splide.Components.Controller.getEnd() + 1;
-    bar.style.width = String((100 * (splide.index + 1)) / end) + "%";
   });
 
   splide.mount();
@@ -108,4 +111,13 @@ $(".faq-item").click(function () {
   }
 
   convertDates();
+    
+  // Cookie consent delay
+  setTimeout(() => {
+    let cookieConsentElements = [...document.getElementsByClassName('fs-cc-banner_component')];
+    for (let index in cookieConsentElements) {
+      let element = cookieConsentElements[index];
+      element.classList.add('fs-cc-banner_component--visible');
+    }
+  }, 4000);
 })();
