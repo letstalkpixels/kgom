@@ -30,18 +30,18 @@ $(".splide").each((index) => {
     breakpoints: {
       991: {
         // Tablet
-        perPage: 1.5,
-        gap: "0.5rem",
+        perPage: 2.2,
+        gap: "0",
       },
       767: {
         // Mobile Landscape
         perPage: 1.2,
-        gap: "0.5rem",
+        gap: "0",
       },
       479: {
         // Mobile Portrait
         perPage: 1.2,
-        gap: "0.5rem",
+        gap: "0",
       },
     },
   });
