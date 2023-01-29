@@ -31,17 +31,17 @@ $(".splide").each((index) => {
       991: {
         // Tablet
         perPage: 1.5,
-        gap: "1rem",
+        gap: "0.5",
       },
       767: {
         // Mobile Landscape
         perPage: 1.2,
-        gap: "1rem",
+        gap: "0.5",
       },
       479: {
         // Mobile Portrait
         perPage: 1.2,
-        gap: "1rem",
+        gap: "0.5",
       },
     },
   });
