@@ -138,7 +138,9 @@ $(".faq-item").click(function () {
         const formData = new FormData(event.target);
 
         (window.dataLayer ?? []).push({
+            event: 'contact_form_submit',
             contactEmail: await encodePayload(formData.get('Email')),
+            contactPhone: await encodePayload(formData.get('Telefoon'))
         });
     });
 })();
